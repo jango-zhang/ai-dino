@@ -1,6 +1,6 @@
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from './constants';
 import { getFPS } from './RuntimeConfig';
-import { getImageSprite, setImageSprite, loadImageSprite } from './ImageSprite';
+import { getImageSprite, loadImageSprite } from './ImageSprite';
 import { getTimeStamp } from './utils';
 import DistanceMeter from './DistanceMeter';
 import Horizon from './Horizon';

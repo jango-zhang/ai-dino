@@ -4,8 +4,8 @@
   "description": "A TensorFlow.js based AI player platform for chrome dino game.The dinosaur game is originally an easter egg game inside chrome.",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
-    "start": "cross-env NODE_ENV=development webpack-dev-server"
+    "build": "vite build",
+    "start": "vite"
   },
   "keywords": [
     "tensorflow",
@@ -24,30 +24,13 @@
   "license": "MIT",
   "devDependencies": {
     "@antv/g6": "^4.7.1",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.19",
-    "cross-env": "^7.0.3",
-    "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.10.0",
-    "file-loader": "^1.1.11",
-    "less": "^3.0.1",
-    "less-loader": "^4.1.0",
-    "postcss-loader": "^7.0.1",
-    "style-loader": "^0.20.3",
-    "ts-loader": "^9.3.1",
-    "typescript": "^4.8.2",
-    "url-loader": "^1.0.1",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.10.1"
+    "less": "^4.2.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.2.0"
   },
   "dependencies": {}
 }
