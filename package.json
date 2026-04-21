@@ -23,7 +23,6 @@
   "author": "pratyush goel",
   "license": "MIT",
   "devDependencies": {
-    "@antv/g6": "^4.7.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",

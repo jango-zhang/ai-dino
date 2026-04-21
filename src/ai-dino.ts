@@ -26,7 +26,7 @@ const handleFirstTime = () => {
   // init nn
   nn = new JNN({
     inputCount: 3,
-    hiddenLayers: [4],
+    hiddenLayers: [4, 5],
     outputCount: 2,
     learnReate: 0.5,
     epoch: 20,
