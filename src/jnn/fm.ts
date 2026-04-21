@@ -1,9 +1,9 @@
 export interface IOptions {
   inputCount: number;
-  hiddenLayerNeuronCount: number;
   outputCount: number;
   learnReate: number;
   epoch: number;
+  hiddenLayers: Array<number>;
 }
 
 export interface INeuron {
@@ -27,43 +27,27 @@ export class JNN {
     this.initNetwork();
   }
 
-  private initNetwork() {
-    this.initHiddenLayer();
-    this.initOutputLayer();
-  }
-
-  private initHiddenLayer() {
-    const hiddenLayer: TLayer = [];
-    const { hiddenLayerNeuronCount, inputCount } = this.options;
-
-    for (let index = 0; index < hiddenLayerNeuronCount; index++) {
+  private createLayer(neuronCount: number, inputCount: number): TLayer {
+    const layer: TLayer = [];
+    for (let i = 0; i < neuronCount; i++) {
       const weights = [];
       for (let j = 0; j < inputCount; j++) {
         weights.push(Math.random());
       }
-      const bias = Math.random();
-
-      hiddenLayer.push({ weights, bias } as INeuron);
+      layer.push({ weights, bias: Math.random() } as INeuron);
     }
-
-    this.network.push(hiddenLayer);
+    return layer;
   }
 
-  private initOutputLayer() {
-    const outputLayer: TLayer = [];
-    const { hiddenLayerNeuronCount, outputCount } = this.options;
+  private initNetwork() {
+    let prevLayerSize = this.options.inputCount;
 
-    for (let index = 0; index < outputCount; index++) {
-      const weights = [];
-      for (let j = 0; j < hiddenLayerNeuronCount; j++) {
-        weights.push(Math.random());
-      }
-      const bias = Math.random();
-
-      outputLayer.push({ weights, bias } as INeuron);
+    for (const neuronCount of this.options.hiddenLayers) {
+      this.network.push(this.createLayer(neuronCount, prevLayerSize));
+      prevLayerSize = neuronCount;
     }
 
-    this.network.push(outputLayer);
+    this.network.push(this.createLayer(this.options.outputCount, prevLayerSize));
   }
 
   private activate(neuron: INeuron, inputs: Array<number>) {
