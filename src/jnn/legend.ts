@@ -21,8 +21,8 @@ interface NodePos {
   radius: number;
 }
 
-export function create() {
-  canvas = document.getElementById('legend') as HTMLCanvasElement;
+export function create(canvasElement: HTMLCanvasElement) {
+  canvas = canvasElement;
   if (!canvas) return;
 
   const container = canvas.parentElement;

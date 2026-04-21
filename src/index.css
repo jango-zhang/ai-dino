@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.game-container {
+  position: relative;
+  display: inline-block;
+}
+
+.game-canvas {
+  height: 150px;
+  max-width: 600px;
+  opacity: 1;
+  overflow: hidden;
+  top: 0;
+  z-index: 2;
+}
+
+.canvas-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@media (max-height: 350px) {
+  .game {
+    margin-top: 5%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 736px) and (orientation: landscape) {
+  .game {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
